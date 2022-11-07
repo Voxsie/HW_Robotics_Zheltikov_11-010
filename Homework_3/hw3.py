@@ -7,14 +7,14 @@ a = 3
 b = 5
 x = np.arange(1, N, 1)
 y = a * x + b
-noise = 30*np.random.normal(size= x.size)
+noise = 30*np.random.normal(size=x.size)
 y_noise = noise + y
 
 plt.plot(x, y_noise, "bo")
 plt.plot(x,y, "r")
 plt.show()
 
-dim_data = np.column_stack((x,y_noise))
+dim_data = np.column_stack((x, y_noise))
 ransac_model, inliers = ransac(dim_data, LineModelND, min_samples=2, residual_threshold=10, max_trials=1000)
 outliers = (inliers == False)
 predict = ransac_model.predict_y(x)
