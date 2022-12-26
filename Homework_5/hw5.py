@@ -1,7 +1,7 @@
 import cv
 import matplotlib.pyplot as plt
 
-default_file = 'map1.pgm'
+default_file = 'source/map1.pgm'
 src = cv.imread(cv.samples.findFile(default_file, cv.IMREAD_GRAYSCALE))
 src = cv.imread(cv.samples.findFile(default_file), cv.IMREAD_GRAYSCALE)
 gray_image = cv.Canny(src, 50, 200, None, 3)
